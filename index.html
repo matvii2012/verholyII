@@ -1,550 +1,492 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verholy Relax Park II — Новий Філіал</title>
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        verholy: {
-                            dark: '#0e1e1c',
-                            cardDark: '#132825',
-                            beige: '#f5d3b3',
-                            beigeLight: '#fdeee0',
-                            textMuted: '#9aa8a6'
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['Montserrat', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #0e1e1c;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
-        .font-serif-custom {
-            font-family: 'Cormorant Garamond', serif;
-        }
-        .hero-bg {
-            background: linear-gradient(to bottom, rgba(14,30,28,0.4) 0%, rgba(14,30,28,0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-        .arc-line {
-            border-top: 1px solid rgba(245, 211, 179, 0.25);
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0e1e1c;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1d3b37;
-            border-radius: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERHOLY RELAX PARK II — Офіційний анонс нового комплексу</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f2220;
+      --bg-card: #152d2b;
+      --accent-gold: #e5c3a6;
+      --text-light: #f5f2eb;
+      --text-dim: #a3b8b5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif-font {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* Top Banner */
+    .promo-banner {
+      background: var(--accent-gold);
+      color: #000;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 5%;
+      border-bottom: 1px solid rgba(229, 195, 166, 0.15);
+      position: sticky;
+      top: 0;
+      background: rgba(15, 34, 32, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      color: var(--accent-gold);
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .btn-gold {
+      background: transparent;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 12px 24px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(rgba(15, 34, 32, 0.6), rgba(15, 34, 32, 0.85)), 
+                  url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') center/cover;
+    }
+
+    .hero-subtitle {
+      color: var(--accent-gold);
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1.1;
+      max-width: 900px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      max-width: 600px;
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    /* Countdown Timer */
+    .countdown-container {
+      background: rgba(21, 45, 43, 0.8);
+      border: 1px solid rgba(229, 195, 166, 0.2);
+      padding: 25px 40px;
+      border-radius: 4px;
+      display: flex;
+      gap: 35px;
+      text-align: center;
+    }
+
+    .time-block .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      color: var(--accent-gold);
+      display: block;
+    }
+
+    .time-block .label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 52px);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 60px;
+      align-items: center;
+    }
+
+    .section-intro p {
+      color: var(--text-dim);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* Cards Grid */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(229, 195, 166, 0.1);
+      overflow: hidden;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-img {
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+
+    .card-body h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+      color: var(--accent-gold);
+    }
+
+    .card-body p {
+      color: var(--text-dim);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Location Banner */
+    .location-box {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+      padding: 60px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .location-box h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .location-box p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      padding: 50px 8%;
+      border-top: 1px solid rgba(229, 195, 166, 0.15);
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 12px;
+    }
+
+    /* Booking Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--accent-gold);
+      padding: 40px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .modal-card h2 {
+      font-size: 32px;
+      color: var(--accent-gold);
+      margin-bottom: 15px;
+    }
+
+    .modal-card p {
+      color: var(--text-dim);
+      font-size: 14px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .section-intro, .location-box {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
-<body class="antialiased selection:bg-verholy-beige selection:text-verholy-dark">
+<body>
 
-    <!-- Announcement Bar -->
-    <div class="bg-verholy-beige text-verholy-dark text-center py-2 px-4 text-xs tracking-widest font-semibold uppercase flex items-center justify-center gap-2">
-        <span class="animate-pulse">✨</span> 
-        ГРАНД-ВІДКРИТТЯ 2-ГО ФІЛІАЛУ ВЖЕ НА НАСТУПНОМУ ТИЖНІ! 
-        <span class="hidden sm:inline opacity-80">(с. Нижній Млин, Полтавська обл.)</span>
-        <span class="animate-pulse">✨</span>
+  <div class="promo-banner">
+    🔥 Увага: Гранд-Відкриття другій черги комплексу вже наступного тижня!
+  </div>
+
+  <header>
+    <div class="logo">
+      Verholy
+      <span>Relax Park II</span>
     </div>
+    <ul class="nav-links">
+      <li><a href="#about">Про комплекс</a></li>
+      <li><a href="#rooms">Номери</a></li>
+      <li><a href="#spa">Relax SPA</a></li>
+      <li><a href="#location">Локація</a></li>
+    </ul>
+    <button class="btn-gold" onclick="openBooking()">Забронювати</button>
+  </header>
 
-    <!-- Navigation Header (Matching screenshot 1 & 3) -->
-    <header class="sticky top-0 z-40 bg-verholy-dark/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Left: Menu Button -->
-            <div class="flex items-center space-x-6">
-                <button onclick="triggerPrankModal('Меню')" class="flex items-center gap-3 text-xs tracking-[0.25em] uppercase hover:text-verholy-beige transition">
-                    <span class="flex flex-col gap-1 w-5">
-                        <span class="h-0.5 w-full bg-white"></span>
-                        <span class="h-0.5 w-3 bg-white"></span>
-                    </span>
-                    МЕНЮ
-                </button>
-                <div class="hidden md:flex items-center text-xs tracking-widest space-x-2 text-verholy-textMuted">
-                    <span class="text-white font-medium cursor-pointer">UA</span>
-                    <span>/</span>
-                    <span class="hover:text-white cursor-pointer" onclick="triggerPrankModal('EN Lang')">EN</span>
-                </div>
-            </div>
-
-            <!-- Center: Logo -->
-            <div class="text-center cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <h1 class="font-serif-custom text-2xl md:text-3xl tracking-[0.35em] text-white uppercase font-light">V E R H O L Y</h1>
-                <p class="text-[9px] tracking-[0.4em] text-verholy-beige uppercase -mt-1">RELAX PARK II</p>
-            </div>
-
-            <!-- Right: Account & Booking Button -->
-            <div class="flex items-center space-x-6">
-                <button onclick="triggerPrankModal('Увійти')" class="hidden sm:block text-xs tracking-[0.2em] uppercase hover:text-verholy-beige transition">
-                    УВІЙТИ
-                </button>
-                <button onclick="triggerPrankModal('Забронювати номер')" class="bg-transparent border border-white/30 hover:border-verholy-beige text-xs tracking-[0.2em] uppercase px-5 py-3 text-verholy-beige hover:bg-verholy-beige hover:text-verholy-dark transition duration-300">
-                    ЗАБРОНЮВАТИ НОМЕР
-                </button>
-            </div>
+  <main>
+    <section class="hero">
+      <div class="hero-subtitle">Глава 2. Нова локація</div>
+      <h1>Природа — це не місце для відвідування. Це — домівка</h1>
+      <p class="hero-desc">Офіційне відкриття другого спа-комплексу у сосновому лісі на березі річки Ворскла у с. Нижній Млин під Полтавою.</p>
+      
+      <div class="countdown-container">
+        <div class="time-block">
+          <span class="number" id="days">05</span>
+          <span class="label">Днів</span>
         </div>
-    </header>
-
-    <!-- HERO SECTION (Matching image_789533.jpg) -->
-    <section class="relative min-h-[85vh] hero-bg flex flex-col justify-between p-6 md:p-12">
-        <div class="max-w-6xl mx-auto w-full my-auto text-center md:text-left pt-12">
-            <div class="inline-block px-4 py-1.5 bg-verholy-beige/20 border border-verholy-beige/40 text-verholy-beige text-[11px] tracking-[0.25em] uppercase mb-6 rounded-full font-medium">
-                📍 Нова локація біля Полтави
-            </div>
-            <h1 class="font-serif-custom text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide leading-tight uppercase font-light max-w-5xl">
-                VERHOLY RELAX PARK 2
-            </h1>
-            <p class="text-sm md:text-lg font-light text-gray-300 max-w-xl mt-4 tracking-wider leading-relaxed">
-                Новий автономний спа-комплекс преміум-класу в сосновому лісі. Відкриття для перших гостей вже за кілька днів!
-            </p>
+        <div class="time-block">
+          <span class="number" id="hours">18</span>
+          <span class="label">Годин</span>
         </div>
-
-        <!-- Quick Booking Bar Widget -->
-        <div class="max-w-5xl mx-auto w-full bg-verholy-cardDark/95 border border-white/10 p-5 md:p-6 rounded-lg shadow-2xl backdrop-blur-md">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 items-center">
-                <div class="border-b md:border-b-0 md:border-r border-white/10 pb-3 md:pb-0 md:pr-4">
-                    <label class="block text-[10px] tracking-widest text-verholy-textMuted uppercase">Філіал</label>
-                    <select class="bg-transparent text-white text-xs md:text-sm font-serif-custom tracking-wider focus:outline-none w-full mt-1 cursor-pointer">
-                        <option class="bg-verholy-dark text-white">с. Нижній Млин (НОВИЙ 2026)</option>
-                    </select>
-                </div>
-                <div class="border-b md:border-b-0 md:border-r border-white/10 pb-3 md:pb-0 md:pr-4">
-                    <label class="block text-[10px] tracking-widest text-verholy-textMuted uppercase">Дати (Наступний тиждень)</label>
-                    <div class="text-xs md:text-sm font-serif-custom tracking-wider mt-1 text-verholy-beige">
-                        13.11.2026 – 15.11.2026
-                    </div>
-                </div>
-                <div class="border-b sm:border-b-0 md:border-r border-white/10 pb-3 md:pb-0 md:pr-4">
-                    <label class="block text-[10px] tracking-widest text-verholy-textMuted uppercase">Гості</label>
-                    <div class="text-xs md:text-sm font-serif-custom tracking-wider mt-1 text-white">
-                        Дорослі: 2, Діти: 0
-                    </div>
-                </div>
-                <div>
-                    <button onclick="triggerPrankModal('Шукати номер на відкриття')" class="w-full bg-verholy-beige text-verholy-dark hover:bg-white font-medium py-3 px-4 text-xs tracking-widest uppercase transition-all duration-300 shadow-md">
-                        Шукати номери
-                    </button>
-                </div>
-            </div>
+        <div class="time-block">
+          <span class="number" id="minutes">41</span>
+          <span class="label">Хвилин</span>
         </div>
+        <div class="time-block">
+          <span class="number" id="seconds">58</span>
+          <span class="label">Секунд</span>
+        </div>
+      </div>
     </section>
 
-    <!-- COUNTDOWN SECTION -->
-    <section class="bg-verholy-cardDark py-12 px-6 border-y border-white/10 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="text-[10px] tracking-[0.3em] uppercase text-verholy-beige">ОФІЦІЙНЕ ВІДКРИТТЯ ДРУГОГО ФІЛІАЛУ</span>
-            <h3 class="font-serif-custom text-2xl md:text-4xl text-white mt-2 mb-8 uppercase tracking-widest">ДО СТАРТУ БРОНЮВАНЬ ЛИШИЛОСЯ:</h3>
-            
-            <div class="grid grid-cols-4 gap-3 md:gap-6 max-w-xl mx-auto">
-                <div class="bg-verholy-dark p-4 rounded border border-white/10">
-                    <span id="days" class="font-serif-custom text-3xl md:text-5xl text-verholy-beige">05</span>
-                    <span class="block text-[9px] md:text-[10px] tracking-widest text-verholy-textMuted uppercase mt-1">Днів</span>
-                </div>
-                <div class="bg-verholy-dark p-4 rounded border border-white/10">
-                    <span id="hours" class="font-serif-custom text-3xl md:text-5xl text-verholy-beige">18</span>
-                    <span class="block text-[9px] md:text-[10px] tracking-widest text-verholy-textMuted uppercase mt-1">Годин</span>
-                </div>
-                <div class="bg-verholy-dark p-4 rounded border border-white/10">
-                    <span id="minutes" class="font-serif-custom text-3xl md:text-5xl text-verholy-beige">42</span>
-                    <span class="block text-[9px] md:text-[10px] tracking-widest text-verholy-textMuted uppercase mt-1">Хвилин</span>
-                </div>
-                <div class="bg-verholy-dark p-4 rounded border border-white/10">
-                    <span id="seconds" class="font-serif-custom text-3xl md:text-5xl text-verholy-beige">15</span>
-                    <span class="block text-[9px] md:text-[10px] tracking-widest text-verholy-textMuted uppercase mt-1">Секунд</span>
-                </div>
-            </div>
+    <section id="about">
+      <div class="section-intro">
+        <div>
+          <div class="hero-subtitle">Про простір</div>
+          <h2 class="section-title">Новий рівень приватності</h2>
         </div>
+        <div>
+          <p>Verholy Relax Park II — це новий автентичний спа-готель, занурений у глуху соснову тишу на новій приватній території. Ми зберегли витончену архітектурну естетику першого комплексу, розширивши аква-зону та додавши приватні шале з власними басейнами.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- CHAPTER 1: QUOTE SECTION (Matching image_789517.png & image_7894f8.png) -->
-    <section class="py-24 px-6 relative overflow-hidden bg-verholy-dark">
-        <div class="max-w-6xl mx-auto relative z-10">
-            <span class="text-[10px] tracking-[0.3em] uppercase text-verholy-textMuted block mb-4">ГЛАВА 1. VERHOLY 2</span>
-            
-            <h2 class="font-serif-custom text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide uppercase leading-tight font-light max-w-5xl text-verholy-beigeLight mb-16">
-                ПРИРОДА - ЦЕ НЕ МІСЦЕ ДЛЯ ВІДВІДУВАННЯ. ЦЕ - ДОМІВКА
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-gray-300 text-sm md:text-base leading-relaxed font-light">
-                    <p>
-                        Verholy Relax Park 2 — це автентичний спа-готель нового покоління, занурений посеред незайманого лісу в с. Нижній Млин під Полтавою.
-                    </p>
-                    <p>
-                        Мрійливий пейзаж обіцяє спокійну подорож, подалі від галасливого світу. Відвідування другого філіалу Verholy — це справжній досвід приватного усамітненого простору. Все є органічним та природним.
-                    </p>
-                    <div class="pt-4">
-                        <button onclick="triggerPrankModal('Дізнатись більше про концепт')" class="group flex items-center gap-4 text-xs tracking-[0.25em] uppercase text-white hover:text-verholy-beige transition">
-                            Дізнатись більше
-                            <span class="w-12 h-px bg-white group-hover:w-16 group-hover:bg-verholy-beige transition-all"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=800&auto=format&fit=crop" alt="Pine forest pool" class="rounded-lg shadow-2xl object-cover w-full h-[400px]">
-                </div>
-            </div>
+    <section id="rooms" style="background: rgba(0,0,0,0.15);">
+      <div class="hero-subtitle">Розміщення</div>
+      <h2 class="section-title" style="margin-bottom: 40px;">Котеджі та номери</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <h3>Forest Standard</h3>
+            <p>Затишний номер із панорамними вікнами на сосновий ліс та приватним балконом.</p>
+          </div>
         </div>
+        <div class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <h3>Chalet Luxe</h3>
+            <p>Окремий двоповерховий будиночок з власною террасою, каміном та джакузі.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <h3>VIP Villa</h3>
+            <p>Простора вілла з приватним підігріваємим басейном та особистим батлером.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ACCOMMODATION SLIDER SECTION (Matching image_7894dd.jpg) -->
-    <section class="py-24 bg-[#0a1816] px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-serif-custom text-4xl md:text-6xl tracking-wide uppercase text-center mb-12 font-light">
-                КОТЕДЖІ ТА НОМЕРИ
-            </h2>
-
-            <div class="relative flex items-center justify-center">
-                <!-- Navigation Arrows -->
-                <button onclick="triggerPrankModal('Попередній номер')" class="absolute left-2 md:left-6 z-20 text-white hover:text-verholy-beige text-3xl transition">
-                    <i class="fa-solid fa-arrow-left-long"></i>
-                </button>
-                <button onclick="triggerPrankModal('Наступний номер')" class="absolute right-2 md:right-6 z-20 text-white hover:text-verholy-beige text-3xl transition">
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                </button>
-
-                <!-- Center Card -->
-                <div class="relative w-full max-w-4xl overflow-hidden rounded-lg shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop" alt="Verholy Room" class="w-full h-[450px] md:h-[550px] object-cover">
-                    
-                    <!-- Floating Beige Overlay Card -->
-                    <div class="absolute bottom-10 right-6 md:right-12 bg-verholy-beige text-verholy-dark p-6 md:p-10 max-w-xs md:max-w-sm shadow-2xl">
-                        <span class="text-[10px] tracking-[0.25em] uppercase text-verholy-dark/70 font-semibold block mb-2">ДІЗНАТИСЯ БІЛЬШЕ</span>
-                        <h3 class="font-serif-custom text-3xl md:text-4xl uppercase tracking-wider font-normal mb-4">НОМЕРИ VIP</h3>
-                        <p class="text-xs text-verholy-dark/80 mb-6 font-light">Панорамні вікна з видом на сосновий гай, власна тераса та камин.</p>
-                        <button onclick="triggerPrankModal('Детальніше про Номери')" class="text-xs uppercase font-semibold tracking-widest border-b border-verholy-dark hover:pb-1 transition-all">
-                            Оглянути номер &rarr;
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <section id="spa">
+      <div class="section-intro">
+        <div>
+          <div class="hero-subtitle">Відновлення</div>
+          <h2 class="section-title">Relax SPA & Wellness</h2>
         </div>
+        <div>
+          <p>Критий басейн із термо-режимом, підводним гідромасажем, фінська сауна, хамам та авторські процедури оздоровлення у хвойному повітрі.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <h3>Критий Басейн</h3>
+            <p>Панорамний теплый бассейн з видом на віковий сосновий ліс.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <h3>Wellness Процедури</h3>
+            <p>Стоун-терапія, масаж та фіто-обгортання для повного розслаблення.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80');"></div>
+          <div class="card-body">
+            <h3>Активний Відпочинок</h3>
+            <p>Велосипедні прогулянки лісовими стежками, баскетбол та теніс.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- GASTRONOMY SECTION (Matching image_7894be.jpg) -->
-    <section class="bg-verholy-beige text-verholy-dark py-24 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            
-            <div class="space-y-6">
-                <h2 class="font-serif-custom text-5xl sm:text-6xl md:text-7xl uppercase leading-none font-light tracking-wide">
-                    ЇЖА З ЛЮБОВ'Ю
-                </h2>
-                <p class="text-verholy-dark/80 text-sm md:text-base leading-relaxed font-light max-w-md">
-                    Наші страви підкорять вас захоплюючими незабутніми природними ароматами, ретельним підбором екологічно чистих, натуральних інгредієнтів та неповторним смаком авторської гастрономії.
-                </p>
-
-                <div class="pt-8 space-y-4">
-                    <div onclick="triggerPrankModal('Food & Forest Restaurant')" class="flex items-center justify-between border-b border-verholy-dark/20 pb-3 cursor-pointer group">
-                        <span class="font-serif-custom text-2xl md:text-3xl tracking-wider uppercase group-hover:translate-x-2 transition-transform">FOOD & FOREST II</span>
-                        <span class="text-xl">&rarr;</span>
-                    </div>
-                    <div onclick="triggerPrankModal('Pool Bar')" class="flex items-center justify-between border-b border-verholy-dark/20 pb-3 cursor-pointer group">
-                        <span class="font-serif-custom text-2xl md:text-3xl tracking-wider uppercase group-hover:translate-x-2 transition-transform">POOL BAR</span>
-                        <span class="text-xl">&mdash;</span>
-                    </div>
-                    <div onclick="triggerPrankModal('Lobby Bar')" class="flex items-center justify-between border-b border-verholy-dark/20 pb-3 cursor-pointer group">
-                        <span class="font-serif-custom text-2xl md:text-3xl tracking-wider uppercase group-hover:translate-x-2 transition-transform">LOBBY BAR</span>
-                        <span class="text-xl">&mdash;</span>
-                    </div>
-                    <div onclick="triggerPrankModal('Phyto Bar')" class="flex items-center justify-between border-b border-verholy-dark/20 pb-3 cursor-pointer group">
-                        <span class="font-serif-custom text-2xl md:text-3xl tracking-wider uppercase group-hover:translate-x-2 transition-transform">PHYTO BAR</span>
-                        <span class="text-xl">&mdash;</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="Restaurant interior" class="rounded-md shadow-xl w-full h-[350px] object-cover">
-            </div>
+    <section id="location" style="padding: 0 8% 100px 8%;">
+      <div class="location-box">
+        <div>
+          <h2>Завітайте до нас</h2>
+          <p>38701 Україна, Полтавська обл., Полтавський р-н, с. Нижній Млин, вул. Соснова, 1</p>
         </div>
+        <div style="text-align: right;">
+          <button class="btn-gold" style="border-color: var(--bg-dark); color: var(--bg-dark);" onclick="openBooking()">Забронювати номер</button>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- SPA & WELLNESS SECTION (Matching image_78949c.jpg) -->
-    <section class="py-20 bg-verholy-dark">
-        <div class="grid grid-cols-1 md:grid-cols-2">
-            
-            <!-- Relax SPA -->
-            <div class="relative group h-[450px] overflow-hidden cursor-pointer" onclick="triggerPrankModal('Relax SPA')">
-                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800&auto=format&fit=crop" alt="Indoor Relax SPA Pool" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"></div>
-                <div class="absolute bottom-12 left-12 text-white">
-                    <h3 class="font-serif-custom text-4xl md:text-5xl tracking-widest uppercase mb-4">RELAX SPA</h3>
-                    <div class="flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-verholy-beige">
-                        Дізнатись більше
-                        <span class="w-8 h-px bg-verholy-beige"></span>
-                    </div>
-                </div>
-            </div>
+  <footer>
+    <p>© УСІ ПРАВА ЗАХИЩЕНІ 2026. RELAX PARK VERHOLY II</p>
+  </footer>
 
-            <!-- Wellness -->
-            <div class="relative group h-[450px] overflow-hidden cursor-pointer border-t md:border-t-0 md:border-l border-white/10" onclick="triggerPrankModal('Wellness')">
-                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop" alt="Wellness" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition"></div>
-                <div class="absolute bottom-12 left-12 text-white">
-                    <h3 class="font-serif-custom text-4xl md:text-5xl tracking-widest uppercase mb-4">WELLNESS</h3>
-                    <div class="flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-verholy-beige">
-                        Дізнатись більше
-                        <span class="w-8 h-px bg-verholy-beige"></span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ACTIVE RECREATION SECTION (Matching image_789498.png & image_78431c.jpg) -->
-    <section class="py-24 px-6 bg-[#0c1a18]">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="font-serif-custom text-4xl sm:text-6xl md:text-7xl uppercase font-light tracking-wide mb-6">
-                АКТИВНИЙ ВІДПОЧИНОК
-            </h2>
-            <p class="text-verholy-textMuted max-w-2xl text-sm md:text-base font-light leading-relaxed mb-16">
-                Ваш візит до другого філіалу Verholy Relax Park може бути настільки енергійно насиченим чи заспокійливим, наскільки ви вирішите власноруч.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Activity 1 -->
-                <div class="bg-verholy-cardDark border border-white/10 p-4 rounded group cursor-pointer" onclick="triggerPrankModal('Баскетбол')">
-                    <span class="text-xs text-verholy-beige font-mono mb-2 block">(01)</span>
-                    <h3 class="font-serif-custom text-2xl uppercase tracking-wider text-white mb-4">БАСКЕТБОЛ</h3>
-                    <div class="overflow-hidden rounded h-56 mb-4">
-                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600&auto=format&fit=crop" alt="Basketball" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-
-                <!-- Activity 2 -->
-                <div class="bg-verholy-cardDark border border-white/10 p-4 rounded group cursor-pointer" onclick="triggerPrankModal('Настільний теніс')">
-                    <span class="text-xs text-verholy-beige font-mono mb-2 block">(02)</span>
-                    <h3 class="font-serif-custom text-2xl uppercase tracking-wider text-white mb-4">НАСТІЛЬНИЙ ТЕНІС</h3>
-                    <div class="overflow-hidden rounded h-56 mb-4">
-                        <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?q=80&w=600&auto=format&fit=crop" alt="Table tennis" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-
-                <!-- Activity 3 -->
-                <div class="bg-verholy-cardDark border border-white/10 p-4 rounded group cursor-pointer" onclick="triggerPrankModal('Велопрогулянки лісом')">
-                    <span class="text-xs text-verholy-beige font-mono mb-2 block">(03)</span>
-                    <h3 class="font-serif-custom text-2xl uppercase tracking-wider text-white mb-4">ВЕЛОПРОГУЛЯНКИ</h3>
-                    <div class="overflow-hidden rounded h-56 mb-4">
-                        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=600&auto=format&fit=crop" alt="Forest Cycling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ADDRESS & MAP SECTION (Matching image_784300.png) -->
-    <section class="py-24 px-6 bg-verholy-dark border-t border-white/10">
-        <div class="max-w-6xl mx-auto">
-            <span class="text-[10px] tracking-[0.3em] uppercase text-verholy-textMuted block text-center mb-2">ГЛАВА 5</span>
-            <h2 class="font-serif-custom text-4xl sm:text-6xl uppercase tracking-wider text-center font-light mb-16">
-                АДРЕСА
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Phone & Directions Box -->
-                <div class="bg-verholy-beige text-verholy-dark p-8 md:p-12 rounded-lg relative overflow-hidden flex flex-col justify-between h-[320px]">
-                    <div>
-                        <span class="text-[10px] tracking-widest uppercase opacity-70 block mb-1">КЛІКНИ, ЩОБ ПРОКЛАСТИ МАРШРУТ ДО МЕНЕ</span>
-                        <a href="tel:0800208800" class="text-xl md:text-2xl font-mono font-medium hover:underline">0800 208 800</a>
-                    </div>
-
-                    <div>
-                        <h3 class="font-serif-custom text-3xl md:text-4xl uppercase tracking-wider leading-tight">
-                            ЗАВІТАЙТЕ ДО НАС
-                        </h3>
-                    </div>
-
-                    <div class="absolute top-8 right-8 w-10 h-10 rounded-full border border-verholy-dark/30 flex items-center justify-center">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                </div>
-
-                <!-- Location & Booking Box -->
-                <div class="bg-verholy-beige text-verholy-dark p-8 md:p-12 rounded-lg flex flex-col justify-between h-[320px]">
-                    <div>
-                        <h3 class="font-serif-custom text-3xl md:text-4xl uppercase tracking-wider leading-tight mb-6">
-                            ПРОВЕДИ СВІЙ ВІДПОЧИНОК САМЕ З НАМИ
-                        </h3>
-                        <p class="text-sm font-light leading-relaxed">
-                            38701 Україна, Полтавська обл.,<br>
-                            Полтавський р-н, с. Нижній Млин, вул. Сосновий Гай, 1
-                        </p>
-                    </div>
-
-                    <button onclick="triggerPrankModal('Забронювати через адресу')" class="flex items-center gap-4 text-xs tracking-[0.2em] uppercase font-semibold text-verholy-dark hover:opacity-75 transition">
-                        Забронювати
-                        <span class="w-12 h-px bg-verholy-dark"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER (Matching image_7842fc.png) -->
-    <footer class="bg-[#081312] text-verholy-textMuted py-16 px-6 border-t border-white/5">
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-xs mb-16">
-            
-            <div>
-                <h4 class="text-white font-serif-custom text-base uppercase tracking-wider mb-4">Ресторани та бари/</h4>
-                <ul class="space-y-2 font-light">
-                    <li onclick="triggerPrankModal('Food & Forest')" class="hover:text-white cursor-pointer">Food & Forest 2</li>
-                    <li onclick="triggerPrankModal('Pich')" class="hover:text-white cursor-pointer">Pich</li>
-                    <li onclick="triggerPrankModal('Lobby Bar')" class="hover:text-white cursor-pointer">Lobby Bar</li>
-                    <li onclick="triggerPrankModal('Phyto Bar')" class="hover:text-white cursor-pointer">Phyto Bar</li>
-                    <li onclick="triggerPrankModal('Pool Bar')" class="hover:text-white cursor-pointer">Pool Bar</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-serif-custom text-base uppercase tracking-wider mb-4">Про нас/</h4>
-                <ul class="space-y-2 font-light">
-                    <li onclick="triggerPrankModal('Історія')" class="hover:text-white cursor-pointer">Історія</li>
-                    <li onclick="triggerPrankModal('FAQ')" class="hover:text-white cursor-pointer">FAQ</li>
-                    <li onclick="triggerPrankModal('Контакти')" class="hover:text-white cursor-pointer">Контакти</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-serif-custom text-base uppercase tracking-wider mb-4">Котеджі та номери/</h4>
-                <ul class="space-y-2 font-light">
-                    <li onclick="triggerPrankModal('Номери')" class="hover:text-white cursor-pointer">Номери</li>
-                    <li onclick="triggerPrankModal('Котеджі')" class="hover:text-white cursor-pointer">Котеджі</li>
-                    <li onclick="triggerPrankModal('Шале')" class="hover:text-white cursor-pointer">Шале</li>
-                    <li onclick="triggerPrankModal('Вілли')" class="hover:text-white cursor-pointer">Вілли</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-serif-custom text-base uppercase tracking-wider mb-4">Spa & Beauty/</h4>
-                <ul class="space-y-2 font-light">
-                    <li onclick="triggerPrankModal('Relax SPA')" class="hover:text-white cursor-pointer">Relax SPA</li>
-                    <li onclick="triggerPrankModal('Wellness')" class="hover:text-white cursor-pointer">Wellness</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-serif-custom text-base uppercase tracking-wider mb-4">Соцмережі/</h4>
-                <ul class="space-y-2 font-light">
-                    <li onclick="triggerPrankModal('Facebook')" class="hover:text-white cursor-pointer">Facebook</li>
-                    <li onclick="triggerPrankModal('Instagram')" class="hover:text-white cursor-pointer">Instagram</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-white/5 text-[10px] tracking-widest uppercase">
-            <div class="flex items-center gap-2 mb-4 sm:mb-0">
-                <span class="w-4 h-4 rounded-full border border-verholy-textMuted flex items-center justify-center font-bold">C</span>
-                <span>УСІ ПРАВА ЗАХИЩЕНІ 2026. RELAX PARK VERHOLY 2</span>
-            </div>
-            <div class="font-serif-custom italic text-sm text-verholy-beige">
-                The First. The Last.
-            </div>
-        </div>
-    </footer>
-
-    <!-- PRANK REVEAL MODAL POPUP -->
-    <div id="prank-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-verholy-cardDark border-2 border-verholy-beige max-w-lg w-full p-8 rounded-xl shadow-2xl text-center relative transform scale-90 transition-all duration-300" id="prank-modal-box">
-            
-            <button onclick="closePrankModal()" class="absolute top-4 right-4 text-verholy-textMuted hover:text-white text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="text-6xl mb-4">😂 🎉</div>
-            
-            <h3 class="font-serif-custom text-3xl md:text-4xl text-verholy-beige uppercase tracking-wider mb-2">
-                ТЕБЕ ВІДПРАНКУВАЛИ!
-            </h3>
-            
-            <div class="h-0.5 w-16 bg-verholy-beige mx-auto mb-6"></div>
-            
-            <p class="text-sm md:text-base text-gray-200 leading-relaxed mb-6 font-light">
-                Це розіграш від брата! <br>
-                Ніякого другого філіалу Verholy у Нижньому Млині на наступному тижні не відкривається 😉
-            </p>
-
-            <div class="bg-verholy-dark p-3 rounded border border-white/10 text-xs text-verholy-textMuted mb-6">
-                Дія: <span id="prank-target-action" class="text-verholy-beige font-semibold">Забронювати</span>
-            </div>
-
-            <button onclick="closePrankModal()" class="bg-verholy-beige text-verholy-dark font-semibold px-8 py-3 text-xs tracking-widest uppercase rounded hover:bg-white transition shadow-lg">
-                ЗАКРИТИ ТА ЗАСМІЯТИСЯ
-            </button>
-        </div>
+  <!-- Modal Booking Notice -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-card">
+      <h2>Закрите Бронювання</h2>
+      <p>Офіційне онлайн-бронювання буде відкрито через 5 днів. Зараз доступний лише передзапис за запрошеннями.</p>
+      <button class="btn-gold" onclick="closeBooking()">Зрозуміло</button>
     </div>
+  </div>
 
-    <!-- Scripts -->
-    <script>
-        // Modal Trigger Function
-        function triggerPrankModal(actionName) {
-            document.getElementById('prank-target-action').innerText = actionName;
-            const modal = document.getElementById('prank-modal');
-            const box = document.getElementById('prank-modal-box');
-            
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100');
-            box.classList.remove('scale-90');
-            box.classList.add('scale-100');
-        }
+  <script>
+    // Countdown script
+    function updateTimer() {
+      const now = new Date();
+      const target = new Date();
+      target.setDate(now.getDate() + 5);
+      
+      document.getElementById('days').innerText = '05';
+      document.getElementById('hours').innerText = '18';
+      document.getElementById('minutes').innerText = '41';
+      document.getElementById('seconds').innerText = String(Math.floor(Math.random() * 50) + 10).padStart(2, '0');
+    }
+    setInterval(updateTimer, 1000);
 
-        function closePrankModal() {
-            const modal = document.getElementById('prank-modal');
-            const box = document.getElementById('prank-modal-box');
-            
-            modal.classList.remove('opacity-100');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            box.classList.remove('scale-100');
-            box.classList.add('scale-90');
-        }
+    function openBooking() {
+      document.getElementById('bookingModal').style.display = 'flex';
+    }
 
-        // Countdown Timer Logic
-        let totalSeconds = (5 * 86400) + (18 * 3600) + (42 * 60) + 15;
-        setInterval(() => {
-            if (totalSeconds > 0) {
-                totalSeconds--;
-                const d = Math.floor(totalSeconds / 86400);
-                const h = Math.floor((totalSeconds % 86400) / 3600);
-                const m = Math.floor((totalSeconds % 3600) / 60);
-                const s = totalSeconds % 60;
-                
-                document.getElementById('days').innerText = String(d).padStart(2, '0');
-                document.getElementById('hours').innerText = String(h).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(m).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(s).padStart(2, '0');
-            }
-        }, 1000);
-    </script>
+    function closeBooking() {
+      document.getElementById('bookingModal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
